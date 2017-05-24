@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "sourceMap": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": false,
+        "noImplicitAny": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "outDir": "build",
+        "lib": [
+            "es6",
+            "dom"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ]
+    },
+    "include": [
+        "src"
+    ],
+    "files": [
+        "src/public_api.ts",
+        "src/typings.d.ts"
+    ],
+    "angularCompilerOptions": {
+        "annotateForClosureCompiler": true,
+        "strictMetadataEmit": true,
+        "flatModuleOutFile": "index.js",
+        "flatModuleId": "@angular/substance",
+        "skipTemplateCodegen": true
+    }
+}

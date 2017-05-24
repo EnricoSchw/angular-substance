@@ -1,0 +1,33 @@
+{
+    "name": "angular-substance-directive",
+    "version": "1.0.0",
+    "description": "Substance editor for angular",
+    "main": "./bundles/angular-substance.js",
+    "module": "./@angular/material.es5.js",
+    "es2015": "./@angular/material.js",
+    "typings": "./material.d.ts",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "test": "echo"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/enricoschw/angular-substance-directive.git"
+    },
+    "keywords": [
+        "substance",
+        "angular"
+    ],
+    "author": "Enrico Schwendig",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/enricoschw/angular-substance-directive/issues"
+    },
+    "homepage": "https://github.com/enricoschw/angular-substance-directive#readme",
+    "devDependencies": {
+        "@angular/core": "^4.0.0",
+        "@angular/common": "^4.0.0"
+    }
+}
