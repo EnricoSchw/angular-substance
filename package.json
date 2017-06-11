@@ -1,33 +1,62 @@
 {
-    "name": "angular-substance-directive",
+    "name": "angular-substance",
     "version": "1.0.0",
     "description": "Substance editor for angular",
-    "main": "./bundles/angular-substance.js",
-    "module": "./@angular/material.es5.js",
-    "es2015": "./@angular/material.js",
-    "typings": "./material.d.ts",
+    "main": "src/index.ts",
+    "module": "src/index.ts",
+    "typings": "src/index.ts",
     "directories": {
         "test": "test"
     },
     "scripts": {
-        "test": "echo"
+        "webpack:dist": "webpack --config webpack.config.js --progress --colors",
+        "build": "echo-cli 'Building DEV ...' && npm run webpack:dist && echo-cli 'Build Complete ✔'",
+        "test": "karma start",
+        "test:watch": "npm run test -- --auto-watch --no-single-run"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/enricoschw/angular-substance-directive.git"
+        "url": "git+https://github.com/enricoschw/angular-substance.git"
     },
     "keywords": [
         "substance",
         "angular"
     ],
-    "author": "Enrico Schwendig",
-    "license": "ISC",
+    "author": "Enrico Schwendig <enrico.schwe@googlemail.com>",
+    "license": "MIT",
     "bugs": {
-        "url": "https://github.com/enricoschw/angular-substance-directive/issues"
+        "url": "https://github.com/enricoschw/angular-substance/issues"
     },
-    "homepage": "https://github.com/enricoschw/angular-substance-directive#readme",
+    "homepage": "https://github.com/enricoschw/angular-substance#readme",
     "devDependencies": {
+        "@angular/common": "^4.0.0",
         "@angular/core": "^4.0.0",
-        "@angular/common": "^4.0.0"
+        "@types/node": "^7.0.22",
+        "angular2-template-loader": "^0.6.2",
+        "awesome-typescript-loader": "^3.1.3",
+        "clean-webpack-plugin": "^0.1.16",
+        "echo-cli": "^1.0.8",
+        "jasmine-core": "^2.6.2",
+        "karma": "^1.7.0",
+        "karma-chrome-launcher": "^2.1.1",
+        "karma-coverage": "^1.1.1",
+        "karma-jasmine": "^1.1.0",
+        "karma-mocha-reporter": "^2.2.3",
+        "karma-sourcemap-loader": "^0.3.7",
+        "karma-webpack": "^2.0.3",
+        "rxjs": "^5.0.1",
+        "source-map-loader": "^0.2.1",
+        "ts-loader": "^2.1.0",
+        "tslib": "^1.7.1",
+        "typescript": "^2.3.3",
+        "webpack": "^2.6.1",
+        "webpack-dev-server": "^2.4.5",
+        "zone.js": "^0.8.10"
+    },
+    "peerDependencies": {
+        "@angular/common": "^4.0.0",
+        "@angular/core": "^4.0.0",
+        "rxjs": "^5.0.1",
+        "zone.js": "^0.8.10"
     }
 }

@@ -1,7 +1,7 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
+        "target": "es6",
+        "module": "es6",
         "moduleResolution": "node",
         "sourceMap": true,
         "emitDecoratorMetadata": true,
@@ -9,7 +9,9 @@
         "removeComments": false,
         "noImplicitAny": false,
         "suppressImplicitAnyIndexErrors": true,
-        "outDir": "build",
+        "skipLibCheck": true,
+        "types": [],
+        "outDir": "dist",
         "lib": [
             "es6",
             "dom"
@@ -21,8 +23,12 @@
     "include": [
         "src"
     ],
+    "exclude": [
+        "test",
+        "**/*.spec.ts"
+    ],
     "files": [
-        "src/public_api.ts",
+        "src/index.ts",
         "src/typings.d.ts"
     ],
     "angularCompilerOptions": {
@@ -33,3 +39,5 @@
         "skipTemplateCodegen": true
     }
 }
+
+
