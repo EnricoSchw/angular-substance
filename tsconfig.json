@@ -1,43 +1,19 @@
 {
-    "compilerOptions": {
-        "target": "es6",
-        "module": "es6",
-        "moduleResolution": "node",
-        "sourceMap": true,
-        "emitDecoratorMetadata": true,
-        "experimentalDecorators": true,
-        "removeComments": false,
-        "noImplicitAny": false,
-        "suppressImplicitAnyIndexErrors": true,
-        "skipLibCheck": true,
-        "types": [],
-        "outDir": "dist",
-        "lib": [
-            "es6",
-            "dom"
-        ],
-        "typeRoots": [
-            "node_modules/@types"
-        ]
-    },
-    "include": [
-        "src"
+  "compileOnSave": false,
+  "compilerOptions": {
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
     ],
-    "exclude": [
-        "test",
-        "**/*.spec.ts"
-    ],
-    "files": [
-        "src/index.ts",
-        "src/typings.d.ts"
-    ],
-    "angularCompilerOptions": {
-        "annotateForClosureCompiler": true,
-        "strictMetadataEmit": true,
-        "flatModuleOutFile": "index.js",
-        "flatModuleId": "@angular/substance",
-        "skipTemplateCodegen": true
-    }
+    "lib": [
+      "es2017",
+      "dom"
+    ]
+  }
 }
-
-
