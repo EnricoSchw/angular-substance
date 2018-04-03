@@ -1,14 +1,5 @@
-export default `<?xml version="1.0"?>
-<!DOCTYPE article PUBLIC "ExampleArticle 1.0" "http://substance.io/ExampleArticle-1.0.dtd">
-<example-article>
-  <title></title>
-  <body>
-    <paragraph>Hello World!</paragraph>
-    <paragraph>Lorem <emphasis>ipsum</emphasis>...</paragraph>
-    <paragraph>Welcome to the <hyperlink href="http://substance.io">Substance</hyperlink> Example Editor!</paragraph>
-    <figure image-source="assets/wind-florida-bird-egret-72133.jpg">
-      <title>Figure 1</title>
-      <caption>Lorem ipsum</caption>
-    </figure>
-  </body>
-</example-article>`
+export default `<html><body>
+  <h1>SimpleWriter</h1>
+  <p>This is the official <span data-type="comment" data-comment="A JavaScript library for web-based content editing">Substance</span> editor boilerplate example. Fork it, and create your own editor.</p>
+  <p>You can find the source code on <a href="http://github.com/substance/starter">Github</a>.</p>
+</body></html>`
