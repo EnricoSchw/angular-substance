@@ -20,10 +20,10 @@
     ],
     "paths": {
       "angular-substance": [
-        "dist/angular-substance"
+        "projects/angular-substance/src"
       ],
       "angular-substance/*": [
-        "dist/angular-substance/*"
+        "projects/angular-substance/*"
       ]
     }
   },
