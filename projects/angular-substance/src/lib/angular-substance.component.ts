@@ -21,7 +21,7 @@ export class AngularSubstanceComponent implements OnInit {
 
         substance.substanceGlobals.DEBUG_RENDERING = true;
         substance.substanceGlobals.STRICT_VALIDATION = false;
-        substanceTexture.Texture.defaultDataFolder = './assets/demo/data/';
+        substanceTexture.Texture.defaultDataFolder = './assets/data/';
         setTimeout(() => {
             let app =(<any>DevWebApp).mount({
                 debug: true,
