@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import * as substance from 'substance-texture/dist/lib/substance/';
+import * as substance from 'substance';
 import * as substanceTexture from 'substance-texture/dist/texture.es';
 
 @Component({
