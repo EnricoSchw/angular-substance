@@ -17,7 +17,8 @@
                         "scripts": [
                             "node_modules/substance-texture/dist/lib/substance/substance.js",
                             "node_modules/substance-texture/dist/lib/katex/katex.js",
-                            "node_modules/substance-texture/texture.es.js"
+                            "node_modules/substance-texture/texture.es.js",
+                            "node_modules/substance-texture/dist/plugins/texture-plugin-jats/texture-plugin-jats.js"
                         ]
                     }
                 },

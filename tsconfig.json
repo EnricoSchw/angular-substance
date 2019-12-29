@@ -24,7 +24,14 @@
             ],
             "angular-substance/*": [
                 "projects/angular-substance/*"
+            ],
+            "substance": [
+                "node_modules/substance-texture/dist/lib/substance/substance.js"
+            ],
+            "substance-texture": [
+                "node_modules/substance-texture/texture.es.js"
             ]
+
         }
     },
     "angularCompilerOptions": {
