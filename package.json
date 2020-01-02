@@ -8,7 +8,9 @@
         "gh-pages:build": "ng build--prod demo",
         "test": "ng test",
         "lint": "ng lint",
-        "e2e": "ng e2e"
+        "e2e": "ng e2e",
+        "dar-server": "node --require esm server/dar-server.js",
+        "server": "node server/server.js"
     },
     "private": true,
     "dependencies": {
@@ -31,10 +33,13 @@
         "@angular/cli": "~8.3.21",
         "@angular/compiler-cli": "~8.2.14",
         "@angular/language-service": "~8.2.14",
-        "@types/node": "~8.9.4",
         "@types/jasmine": "~3.3.8",
         "@types/jasminewd2": "~2.0.3",
+        "@types/node": "~8.9.4",
         "codelyzer": "^5.0.0",
+        "esm": "^3.2.25",
+        "express": "^4.17.1",
+        "express-form-data": "^2.0.10",
         "jasmine-core": "~3.4.0",
         "jasmine-spec-reporter": "~4.2.1",
         "karma": "~4.1.0",

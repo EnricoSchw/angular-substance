@@ -25,10 +25,15 @@ export class AngularSubstanceComponent implements OnInit {
         setTimeout(() => {
             let app =(<any>DevWebApp).mount({
                 debug: true,
-                archiveId: substance.getQueryStringParam('archive') || 'elife-32671',
-                storageType: substance.getQueryStringParam('storage') || 'vfs',
-                storageUrl: substance.getQueryStringParam('storageUrl') || '/archives',
-                vfs: (<any>window).vfs,
+                // archiveId: substance.getQueryStringParam('archive') || 'elife-32671',
+                // storageType: substance.getQueryStringParam('storage') || 'vfs',
+                // storageUrl: substance.getQueryStringParam('storageUrl') || '/archives',
+                // vfs: (<any>window).vfs,
+
+                archiveId: 'elife-32671',
+                //archiveId: 'blank',
+                storageType: 'http',
+                storageUrl: 'api/archives',
                 enableRouting: true
             }, window.document.body);
         }, 500);
@@ -37,8 +42,9 @@ export class AngularSubstanceComponent implements OnInit {
 }
 
 class DevWebApp extends substanceTexture.TextureWebApp {
+    // protected props = super.props;
     _getStorage () {
-        let storageType = 'vfs'; //this.props.storageType;
+        let storageType = (<any>this).props.storageType;
         let storage = super._getStorage();
         if (storageType === 'vfs') {
             substanceTexture.vfsSaveHook(storage, substanceTexture.TextureArchive);
