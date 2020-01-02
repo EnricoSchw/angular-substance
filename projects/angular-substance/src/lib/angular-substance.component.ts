@@ -30,7 +30,8 @@ export class AngularSubstanceComponent implements OnInit {
                 // storageUrl: substance.getQueryStringParam('storageUrl') || '/archives',
                 // vfs: (<any>window).vfs,
 
-                archiveId: 'blank',
+                archiveId: 'elife-32671',
+                //archiveId: 'blank',
                 storageType: 'http',
                 storageUrl: 'api/archives',
                 enableRouting: true

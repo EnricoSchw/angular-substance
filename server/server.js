@@ -1,14 +1,27 @@
-const jsonServer = require('json-server');
-const server = jsonServer.create();
-const router = jsonServer.router('server/db.json');
-const middlewares = jsonServer.defaults();
+const express = require('express');
+const formData = require("express-form-data");
+const server = express();
 
-const blank = require('./data/blank');
-const elife = require('./data/elife-32671');
+const options = {
+    uploadDir: './tmp',
+    autoClean: true
+};
+
+// parse data with connect-multiparty.
+server.use(formData.parse(options));
+// delete from the request all empty files (size == 0)
+server.use(formData.format());
+// change the file objects to fs.ReadStream
+server.use(formData.stream());
+// union the body and the files
+server.use(formData.union());
 
 
-// Set default middlewares (logger, static, cors and no-cache)
-server.use(middlewares);
+// server.use(express.urlencoded());
+const blank = require('./data-js/blank/blank');
+const elife = require('./data-js/elife/elife-32671');
+
+
 
 // Add custom routes before JSON Server router
 server.get('/archives/:archiveId', (req, res) => {
@@ -27,7 +40,15 @@ server.get('/archives/:archiveId', (req, res) => {
     res.jsonp(response);
 });
 
-server.put('/archives/:archiveId', (req, res) => {
+server.put('/archives/:archiveId',  (req, res) => {
+    const formData = req.body;
+
+
+    // console.log('data',req.body);
+    // console.log('undefined',req.undefined);
+    // console.log('file',req.files);
+    // console.log('params',req.params);
+
     const archiveId = req.params.archiveId;
     let response;
     switch (archiveId) {
@@ -43,20 +64,8 @@ server.put('/archives/:archiveId', (req, res) => {
     res.status(200).jsonp(response);
 });
 
+server.use('/archives/elife-32671/assets', express.static(__dirname +  '/data-js/elife/assets'));
 
-// To handle POST, PUT and PATCH you need to use a body-parser
-// You can use the one used by JSON Server
-server.use(jsonServer.bodyParser);
-server.use((req, res, next) => {
-    if (req.method === 'POST') {
-        req.body.createdAt = Date.now()
-    }
-// Continue to JSON Server router
-    next()
+server.listen(3000, function () {
+    console.log('Server listening on port 3000!');
 });
-
-// Use default router
-server.use(router);
-server.listen(3000, () => {
-    console.log('JSON Server is running')
-})
