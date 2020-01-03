@@ -15,7 +15,6 @@ export class HttpStorageClientService implements DarStorageClient {
 
     public read(archiveId: string, cb: (err: Error, response: Dar) => void): Promise<Dar> {
         let url = this.apiUrl;
-
         if (archiveId) {
             url = url + '/' + archiveId;
         }
@@ -72,5 +71,9 @@ export class HttpStorageClientService implements DarStorageClient {
                     }
                 );
         });
+    }
+
+    public setApiUrl(url: string): void {
+        this.apiUrl = url;
     }
 }
