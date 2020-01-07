@@ -1,27 +1,96 @@
 # Angular Substance
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [About](#about)
+- [Getting started](#getting-started)
+- [Documentation](#documentation)
+- [Run Demo](#run-demo)
+- [Build](#build)
+- [License](#license)
 
-## Code scaffolding
+## About
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Angular Substance is a library to integrate [Substance](https://github.com/substance/substance) in angular projects. I use [Texture](https://github.com/substance/texture) as basement for a Substance Editor.
+
+This project based on 
+- [Texture](https://github.com/substance/texture) version 3.0.0-preview-18
+- [Substance](https://github.com/substance/substance) version 1.1.0-preview.27
+- [Angular](https://github.com/angular/angular) version 8
+
+## Getting started:
+
+```bash
+npm i --save angular-substance
+```
+
+
+## Documentation
+
+### Module Interface
+
+```typescript
+import { Component } from '@angular/core';
+import { StorageType } from 'angular-substance';
+
+@Component({
+  selector: 'app-component',
+  template: '<esl-angular-substance [archiveId]="archiveId" [storageType]="storageType" [storageUrl]="storageUrl"></esl-angular-substance>'
+})
+export class AppComponent {
+    public archiveId: string = 'elife-32671';
+    public storageType: StorageType = StorageType.HTTP;
+    public storageUrl: string ='api/archives';
+}
+```
+
+### Properties
+
+Property | Type | Default | Description
+------------ | ------------- | ------------- | -------------
+archiveId | string | none | Your Archive name. It isNormally an id to find in the backend storage.
+storageType | StorageType | StorageType.HTTP | The storage client you use to save documents in the backend. Normally you want save your documents in a server backend sending over **http**. You can use the Substance http storage client (StorageType.HTTP), As well you can use Angular http storage client (StorageType.ANGULAR_HTTP) or your own implementation of this.
+storageUrl | string | api/archive |Url address for your backend service
+
+### Setup
+import the angular-substance module into your apps module:
+
+#### Integrate Angular Substance Module
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AngularSubstanceModule } from 'angular-substance';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        AngularSubstanceModule
+    ]
+})
+export class AppModule { }
+```
+
+#### Use custom http service for your API
+
+
+ comming sone
+
+## Run Demo
+
+Start a Backend
+- Run `npm run server` for the http REST backend server deliver fromjson data
+- Run `npm run dar-server` for the http DAR backend server deliver from DAR archive
+
+Start Demo Project
+- Run `npm start` for the demo project
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## License
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+MIT
