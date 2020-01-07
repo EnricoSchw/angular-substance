@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import { DarStorageClient } from 'angular-substance/src/lib/dar/dar-storage-client';
 import { HttpClient } from '@angular/common/http';
 import { Dar } from 'angular-substance/src/lib/dar/dar';
+import { DarStorageClient } from 'angular-substance/src/lib/storage/dar-storage-client';
 
 @Injectable({
     providedIn: 'root'
 })
-export class HttpStorageClientService implements DarStorageClient {
+export class AngularHttpStorageClient implements DarStorageClient {
 
     private apiUrl: string;
 

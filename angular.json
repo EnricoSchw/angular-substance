@@ -7,7 +7,7 @@
             "projectType": "library",
             "root": "projects/angular-substance",
             "sourceRoot": "projects/angular-substance/src",
-            "prefix": "lib",
+            "prefix": "esl",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-ng-packagr:build",
