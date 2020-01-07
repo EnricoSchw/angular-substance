@@ -11,7 +11,6 @@ class DevWebApp extends substanceTexture.TextureWebApp {
         const storageType = <StorageType>(<any>this).props.storageType;
 
         if (storageType === StorageType.VFS) {
-            (<any>this).props.storageType = 'vfs';
             const storage = super._getStorage();
             substanceTexture.vfsSaveHook(storage, substanceTexture.TextureArchive);
             return storage;
@@ -26,11 +25,7 @@ class DevWebApp extends substanceTexture.TextureWebApp {
 
 @Component({
     selector: 'esl-angular-substance',
-    template: `
-        <p>
-            angular-substance works!
-        </p>
-    `,
+    template: ``,
     styles: []
 })
 export class AngularSubstanceComponent implements OnInit {
@@ -38,11 +33,10 @@ export class AngularSubstanceComponent implements OnInit {
     @Input() archiveId: string = 'elife-32671';
     @Input() storageUrl: string = 'api/archives';
     @Input() storageType: StorageType = StorageType.HTTP;
-    defaultDataFolder: string = './assets/data/';
+    @Input() defaultDataFolder: string = './assets/data/';
 
     constructor(private storage: AngularHttpDarStorageClientService) {
     }
-
 
     ngOnInit() {
         this.storage.setApiUrl(this.storageUrl);
@@ -65,10 +59,8 @@ export class AngularSubstanceComponent implements OnInit {
             config = {...config, vfs: (<any>window).vfs};
         }
 
-
         setTimeout(() => {
             let app = (<any>DevWebApp).mount(config, window.document.body);
         }, 500);
-
     }
 }
