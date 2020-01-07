@@ -5,7 +5,7 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build angular-substance",
-        "gh-pages:build": "ng build--prod demo",
+        "build:gh-pages": "ng build --prod --base-href angular-substance demo",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e",
