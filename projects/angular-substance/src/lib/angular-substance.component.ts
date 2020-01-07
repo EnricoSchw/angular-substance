@@ -4,7 +4,7 @@ import * as substance from 'substance-texture/dist/lib/substance/substance';
 import * as substanceTexture from 'substance-texture/dist/texture.es';
 import { EditorConfig } from 'angular-substance/src/lib/config/editor-config';
 import { StorageType } from 'angular-substance/src/lib/storage/storage-type';
-import { AngularHttpDarStorageClientService } from 'angular-substance/src/lib/storage/angular-http-dar-storage-client.service';
+import { AngularHttpStorageClient } from 'angular-substance/src/lib/storage/angular-http-storage.client';
 
 class DevWebApp extends substanceTexture.TextureWebApp {
     _getStorage() {
@@ -35,7 +35,7 @@ export class AngularSubstanceComponent implements OnInit {
     @Input() storageType: StorageType = StorageType.HTTP;
     @Input() defaultDataFolder: string = './assets/data/';
 
-    constructor(private storage: AngularHttpDarStorageClientService) {
+    constructor(private storage: AngularHttpStorageClient) {
     }
 
     ngOnInit() {

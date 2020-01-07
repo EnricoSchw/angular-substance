@@ -86,12 +86,31 @@ defaultDataFolder | string | ./assets/data/ | Public folder with dar archives if
 
 ### Use custom http service for your API
 
-coming soon
+- Use `StorageType.ANGULAR_HTTP` for property `storageType` in the component setup
+- Write an Custom Service with implementation of `DarStorageClient`
+- Inject your custom service instate of `AngularHttpStorageClient` in your App Module
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AngularSubstanceModule, AngularHttpStorageClient } from 'angular-substance';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        AngularSubstanceModule
+    ],
+    providers: [
+        [{ provide: AngularHttpStorageClient, useClass: CustomStorageClientService }]
+    ],
+})
+export class AppModule { }
+```
 
 ### Setup for VFS Storage
 
 - Add vfs as lib to `windows.vfs = your.vfs` , See demo index.html
-- Use `StorageType.VFS` and adjust in the component setup `defaultDataFolder`, pointing to your dar archives 
+- Use `StorageType.VFS` for property `storageType` and adjust in the component setup `defaultDataFolder`, pointing to your dar archives 
 ```typescript
 @Component({
   ...

@@ -8,7 +8,7 @@ import { StorageType } from 'angular-substance/src/lib/storage/storage-type';
 })
 export class AppComponent {
     title = 'demo';
-    public storageType: StorageType = StorageType.VFS;
+    public storageType: StorageType = StorageType.ANGULAR_HTTP;
     public archiveId: string = 'elife-32671';
     public storageUrl: string ='api/archives';
 }

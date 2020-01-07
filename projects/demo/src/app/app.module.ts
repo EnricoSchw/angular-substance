@@ -6,15 +6,15 @@ import { AppComponent } from './app.component';
 import { AngularSubstanceModule } from 'angular-substance/src/public-api';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+    declarations: [
+        AppComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         AngularSubstanceModule
     ],
-  providers: [],
-  bootstrap: [AppComponent]
+    bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
