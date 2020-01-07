@@ -62,7 +62,11 @@ import { StorageType } from 'angular-substance';
 
 @Component({
   selector: 'app-component',
-  template: '<esl-angular-substance [archiveId]="archiveId" [storageType]="storageType" [storageUrl]="storageUrl"></esl-angular-substance>'
+  template: '<esl-angular-substance
+                [archiveId]="archiveId" 
+                [storageType]="storageType" 
+                [storageUrl]="storageUrl">
+            </esl-angular-substance>'
 })
 export class AppComponent {
     public archiveId: string = 'elife-32671';
@@ -91,11 +95,16 @@ coming soon
 ```typescript
 @Component({
   ...
-  template: '<esl-angular-substance [archiveId]="archiveId" [storageType]="storageType" [storageUrl]="storageUrl"></esl-angular-substance>'
+  template: '<esl-angular-substance 
+                 ...
+                [storageType]="storageType"
+                [defaultDataFolder]="defaultDataFolder">
+            </esl-angular-substance>'
 })
 export class AppComponent {
+    ...
     public storageType: StorageType = StorageType.VFS;
-    public efaultDataFolder: string = './assets/data/';
+    public defaultDataFolder: string = './assets/data/';
 
 }
 ```
