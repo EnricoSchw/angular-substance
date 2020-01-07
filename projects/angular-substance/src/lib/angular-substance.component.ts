@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import * as substance from 'substance-texture/dist/lib/substance/substance';
 import * as substanceTexture from 'substance-texture/dist/texture.es';
+import { HttpStorageClientService } from 'angular-substance/src/lib/dar/http-storage-client.service';
 
 @Component({
     selector: 'lib-angular-substance',
@@ -14,7 +15,10 @@ import * as substanceTexture from 'substance-texture/dist/texture.es';
 })
 export class AngularSubstanceComponent implements OnInit {
 
-    constructor() {
+    private storageUrl = 'api/archives';
+
+    constructor(private storage: HttpStorageClientService) {
+        this.storage.setApiUrl(this.storageUrl);
     }
 
     ngOnInit() {
@@ -32,8 +36,10 @@ export class AngularSubstanceComponent implements OnInit {
 
                 archiveId: 'elife-32671',
                 //archiveId: 'blank',
-                storageType: 'http',
-                storageUrl: 'api/archives',
+                // storageType: 'http',
+                storage: this.storage,
+                storageType: 'custom',
+                storageUrl: this.storageUrl,
                 enableRouting: true
             }, window.document.body);
         }, 500);
@@ -45,10 +51,10 @@ class DevWebApp extends substanceTexture.TextureWebApp {
     // protected props = super.props;
     _getStorage () {
         let storageType = (<any>this).props.storageType;
-        let storage = super._getStorage();
-        if (storageType === 'vfs') {
-            substanceTexture.vfsSaveHook(storage, substanceTexture.TextureArchive);
-        }
-        return storage
+        // let storage = super._getStorage();
+        // if (storageType === 'vfs') {
+        //     substanceTexture.vfsSaveHook(storage, substanceTexture.TextureArchive);
+        // }
+        return (<any>this).props.storage;
     }
 }
