@@ -36,7 +36,7 @@ export class HttpStorageClientService implements DarStorageClient {
         });
     }
 
-    public write(archiveId: string, data: Dar, cb: (err: Error, response: Dar) => void): Promise<any> {
+    public write(archiveId: string, data: Dar, cb: (err: Error, response: Dar) => void): Promise<Dar> {
         let form = new FormData();
         Object.keys(data.resources).forEach((filePath) => {
             const record = data.resources[filePath];

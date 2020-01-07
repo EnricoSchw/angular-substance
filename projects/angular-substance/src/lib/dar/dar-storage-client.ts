@@ -2,7 +2,9 @@ import { Dar } from 'angular-substance/src/lib/dar/dar';
 
 export interface DarStorageClient {
 
-    read(archiveId: string, cb: (err: any, response:Dar) => void): Promise<any>;
+    read(archiveId: string, cb: (err: Error, response:Dar) => void): Promise<Dar>;
 
-    write(archiveId: string, data: Dar, cb: (err: any, response: Dar) => void): Promise<any>;
+    write(archiveId: string, data: Dar, cb: (err: Error, response: Dar) => void): Promise<Dar>;
+
+    setApiUrl(url: string): void
 }
