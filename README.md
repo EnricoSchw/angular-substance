@@ -5,8 +5,8 @@
 
 - [About](#about)
 - [Getting started](#getting-started)
-- [Documentation](#documentation)
 - [Run Demo](#run-demo)
+- [Documentation](#documentation)
 - [Build](#build)
 - [License](#license)
 
@@ -25,8 +25,34 @@ This project based on
 npm i --save angular-substance
 ```
 
+## Run Demo
+
+Start a Backend
+- Run `npm run server` for the http REST backend server deliver fromjson data
+- Run `npm run dar-server` for the http DAR backend server deliver from DAR archive
+
+Start Demo Project
+- Run `npm start` for the demo project
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Documentation
+
+### Integrate Angular Substance Module
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AngularSubstanceModule } from 'angular-substance';
+
+@NgModule({
+    imports: [
+        BrowserModule,
+        AngularSubstanceModule
+    ]
+})
+export class AppModule { }
+```
 
 ### Module Interface
 
@@ -53,39 +79,9 @@ archiveId | string | none | Your Archive name. It isNormally an id to find in th
 storageType | StorageType | StorageType.HTTP | The storage client you use to save documents in the backend. Normally you want save your documents in a server backend sending over **http**. You can use the Substance http storage client (StorageType.HTTP), As well you can use Angular http storage client (StorageType.ANGULAR_HTTP) or your own implementation of this.
 storageUrl | string | api/archive |Url address for your backend service
 
-### Setup
-import the angular-substance module into your apps module:
+### Use custom http service for your API
 
-#### Integrate Angular Substance Module
-```typescript
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { AngularSubstanceModule } from 'angular-substance';
-
-@NgModule({
-    imports: [
-        BrowserModule,
-        AngularSubstanceModule
-    ]
-})
-export class AppModule { }
-```
-
-#### Use custom http service for your API
-
-
- comming sone
-
-## Run Demo
-
-Start a Backend
-- Run `npm run server` for the http REST backend server deliver fromjson data
-- Run `npm run dar-server` for the http DAR backend server deliver from DAR archive
-
-Start Demo Project
-- Run `npm start` for the demo project
-
-Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+comming sone
 
 ## Build
 
