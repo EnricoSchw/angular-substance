@@ -1,7 +1,7 @@
 export interface Dar {
     version: string | number;
     diff?: Diff[];
-    resources: {
+    resources?: {
         'manifest.xml': DarResource;
         'manuscript.xml'?: DarResource;
         [assetPath: string]: DarAssetResource;
