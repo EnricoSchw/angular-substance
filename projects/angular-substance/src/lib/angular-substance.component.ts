@@ -10,7 +10,8 @@ class DevWebApp extends substanceTexture.TextureWebApp {
     _getStorage() {
         const storageType = <StorageType>(<any>this).props.storageType;
 
-        if (storageType === StorageType.VFL) {
+        if (storageType === StorageType.VFS) {
+            (<any>this).props.storageType = 'vfs';
             const storage = super._getStorage();
             substanceTexture.vfsSaveHook(storage, substanceTexture.TextureArchive);
             return storage;
@@ -59,6 +60,11 @@ export class AngularSubstanceComponent implements OnInit {
         if (this.storageType === StorageType.ANGULAR_HTTP) {
             config = {...config, storage: this.storage};
         }
+
+        if (this.storageType === StorageType.VFS) {
+            config = {...config, vfs: (<any>window).vfs};
+        }
+
 
         setTimeout(() => {
             let app = (<any>DevWebApp).mount(config, window.document.body);

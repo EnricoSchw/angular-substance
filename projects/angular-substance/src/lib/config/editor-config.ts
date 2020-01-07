@@ -6,7 +6,8 @@ export class EditorConfig {
     archiveId: string | number;
     storageType: StorageType;
     storageUrl: string;
-    storage?: DarStorageClient;
     debug: boolean;
     enableRouting: boolean;
+    storage?: DarStorageClient;
+    vfs?: any;
 }

@@ -77,11 +77,11 @@ Property | Type | Default | Description
 ------------ | ------------- | ------------- | -------------
 archiveId | string | none | Your Archive name. It isNormally an id to find in the backend storage.
 storageType | StorageType | StorageType.HTTP | The storage client you use to save documents in the backend. Normally you want save your documents in a server backend sending over **http**. You can use the Substance http storage client (StorageType.HTTP), As well you can use Angular http storage client (StorageType.ANGULAR_HTTP) or your own implementation of this.
-storageUrl | string | api/archive |Url address for your backend service
+storageUrl | string | api/archives |Url address for your backend service
 
 ### Use custom http service for your API
 
-comming sone
+coming soon
 
 ## Build
 

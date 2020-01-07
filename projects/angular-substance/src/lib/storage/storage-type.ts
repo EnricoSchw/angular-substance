@@ -1,3 +1,3 @@
 export enum StorageType {
-    HTTP = 'http', ANGULAR_HTTP = 'angular-http', VFL = 'vfl'
+    HTTP = 'http', ANGULAR_HTTP = 'angular-http', VFS = 'vfs'
 }
