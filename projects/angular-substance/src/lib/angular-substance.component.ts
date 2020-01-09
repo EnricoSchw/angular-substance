@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 
-import * as substance from 'substance-texture/dist/lib/substance/substance';
-import * as substanceTexture from 'substance-texture/dist/texture.es';
-import { EditorConfig } from 'angular-substance/src/lib/config/editor-config';
-import { StorageType } from 'angular-substance/src/lib/storage/storage-type';
-import { AngularHttpStorageClient } from 'angular-substance/src/lib/storage/angular-http-storage.client';
+import * as katex from 'katex';
+import * as substance from 'substance';
+import * as substanceTexture from 'substance-texture';
+import { EditorConfig } from './config/editor-config';
+import { StorageType } from './storage/storage-type';
+import { AngularHttpStorageClient } from './storage/angular-http-storage.client';
 
 class DevWebApp extends substanceTexture.TextureWebApp {
     _getStorage() {
@@ -26,7 +27,6 @@ class DevWebApp extends substanceTexture.TextureWebApp {
 @Component({
     selector: 'esl-angular-substance',
     template: ``,
-    styles: []
 })
 export class AngularSubstanceComponent implements OnInit {
 

@@ -1,0 +1,9 @@
+{
+    "bundlerOptions": {
+        "entryFile": "./projects/angular-substance/src/assets/styles/angular-substance.scss",
+        "includePaths": ["./node_modules/substance-texture/dist/"],
+        "rootDir": "./",
+        "outFile": "./dist/angular-substance/assets/angular-substance.css",
+        "ignoreImports": ["~@angular/.*"]
+    }
+}

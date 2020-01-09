@@ -1,4 +1,4 @@
-import { Dar } from 'angular-substance/src/lib/dar/dar';
+import { Dar } from './../dar/dar';
 
 export interface DarStorageClient {
 

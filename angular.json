@@ -13,14 +13,19 @@
                     "builder": "@angular-devkit/build-ng-packagr:build",
                     "options": {
                         "tsConfig": "projects/angular-substance/tsconfig.lib.json",
-                        "project": "projects/angular-substance/ng-package.json",
-                        "scripts": [
-                            "node_modules/substance-texture/dist/lib/substance/substance.js",
-                            "node_modules/substance-texture/dist/lib/katex/katex.js",
-                            "node_modules/substance-texture/texture.es.js",
-                            "node_modules/substance-texture/dist/plugins/texture-plugin-jats/texture-plugin-jats.js"
-                        ]
-                    }
+                        "project": "projects/angular-substance/ng-package.json"
+
+                    },
+                    "styles": [
+                        "node_modules/substance-texture/texture.css",
+                        "node_modules/substance-texture/texture-reset.css",
+                        "node_modules/substance-texture/dist/lib/katex/katex.css",
+                        "node_modules/substance-texture/dist/lib/inter-ui/inter.css"
+                    ],
+                    "scripts": [
+                        "node_modules/substance-texture/dist/lib/katex/katex.js",
+                        "node_modules/substance-texture/dist/plugins/texture-plugin-jats/texture-plugin-jats.js"
+                    ]
                 },
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",

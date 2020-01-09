@@ -1,5 +1,5 @@
-import { DarStorageClient } from 'angular-substance/src/lib/storage/dar-storage-client';
-import { StorageType } from 'angular-substance/src/lib/storage/storage-type';
+import { DarStorageClient } from './../storage/dar-storage-client';
+import { StorageType } from './../storage/storage-type';
 
 
 export class EditorConfig {

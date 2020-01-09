@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Dar } from 'angular-substance/src/lib/dar/dar';
-import { DarStorageClient } from 'angular-substance/src/lib/storage/dar-storage-client';
+import { Dar } from './../dar/dar';
+import { DarStorageClient } from './dar-storage-client';
 
 @Injectable({
     providedIn: 'root'
